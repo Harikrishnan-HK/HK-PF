@@ -4,7 +4,7 @@ export default{
     type: 'document',
     fields:[
         {
-            name:'imgUrl',
+            name:'imgurl',
             title:'ImgUrl',
             type: 'image',
             options: {
