@@ -20,21 +20,21 @@ const Header = () => {
     <div className='app__headr'>
       <div className='.app__headerName'>
 
-          <h1>I'm Harikrishnan Karuppiah</h1>
-    <h2>I'm a 
+          <h1>Harikrishnan Karuppiah</h1>
+    <h2>I'm a
     <TypeAnimation
       sequence={[
         // Same substring at the start will only be typed out once, initially
-        'Developer',
+        'Web Developer',
         2000, // wait 1s before replacing "Mice" with "Hamsters"
-        'Coder',
-        2000,
         'Cloud Solution Architect',
+        2000,
+        'Coder',
         2000,
         'Freelancer',
         2000
       ]}
-      wrapper='div'
+      wrapper='span'
       speed={50}
       cursor={true}
       style={{ fontSize: '1em', color: '#313bac', paddingLeft:'5px'  }}
