@@ -24,7 +24,7 @@ useEffect(() => {
 
   return (
     <>
-    <h2 className='head-text'>I know that <span>Good Dev</span> <br />means <span>Good Business</span></h2>
+    <h2 className='head-text'>Turning lines of <span>Codes</span> <br />into Digital<span> Symphonies</span></h2>
     <div className='app__profiles'>
       {abouts.map((about,index)=>(
         <motion.div

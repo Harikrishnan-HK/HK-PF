@@ -1,12 +1,35 @@
 #home {
-    position: relative;
-    background: url('../../assets/bgIMG.png');
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center;
+    // position: relative;
+    // background: url('../../assets/headerImage1.jpg');
+    // background-size: cover;
+    // background-repeat: repeat;
+    // background-position: center;
 
     .app__wrapper {
+        position: relative;
+        background: url('../../assets/headerImage1.jpg');
+        background-size: cover;
+        background-repeat: repeat;
+        background-position: center;
+    
+
         padding: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+            // background: linear-gradient(rgba(237, 242, 248, 1), rgba(237, 242, 248, 0));
+            pointer-events: none;
+            z-index: 0; /* Set a z-index to make sure it's behind other elements */
+          }
+        
+
+        
 
         .copyright {
             display: none;
@@ -15,6 +38,16 @@
 
     }
 }
+// #home::before {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+//     pointer-events: none;
+//   }
 .app__header {
     flex: 1;
     width: 100%;
@@ -159,7 +192,7 @@
     position: relative;
 
     img {
-        // width: 100%;
+        width: 100%;
         object-fit: contain;
         z-index: 1;
     }
@@ -181,4 +214,19 @@
 
 
 }
+
+
+.app__headr {
+  position: relative;
+
+  
+  .app__headerName {
+    position: relative;
+    z-index: 1; /* Set a higher z-index to make sure it's above the gradient overlay */
+    
+  }
+}
+
+
+
 
