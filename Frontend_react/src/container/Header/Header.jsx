@@ -37,7 +37,7 @@ const Header = () => {
       wrapper='span'
       speed={50}
       cursor={true}
-      style={{ fontSize: '1em', color: '#313bac', paddingLeft:'5px'  }}
+      style={{ fontSize: '1em', color: '#40128B', paddingLeft:'5px'  }}
       repeat={Infinity}
     /> </h2>
           </div>
