@@ -13,9 +13,28 @@ export default {
                 type:'string'
             },
             {
-                name:'desc',
-                title:'Desc',
+                name:'desc1',
+                title:'Desc Line1',
                 type:'string'
-            }
+            },
+            {
+                name:'desc2',
+                title:'Desc Line2',
+                type:'string'
+            },
+            {
+                name:'desc3',
+                title:'Desc Line3',
+                type:'string'
+            },
+            {
+                name:'icon',
+                title:'Company Logo',
+                type: 'image',
+                options: {
+                  hotspot: true,
+                },
+            },
+    
     ]
 }

@@ -103,9 +103,18 @@
     align-items: flex-start;
     flex-direction: row;
     margin: 1rem 0;
+    img {
+        width: 90px;
+        height: 90px;
+
+        // width: 50%;
+        // height: 50%;
+    }
+
 }
 .app__skills-exp-works {
     flex: 1;
+
 
     .app__skills-exp-work {
         display: flex;
@@ -114,17 +123,22 @@
         flex-direction: column;
         margin-bottom: 1rem;
         cursor: pointer;
+        width: 80%;
+
 
         h4 {
-            font-weight: 500;
+            font-weight: 600;
         }
 
         p{
-            font-weight: 400;
+            font-weight: 500;
             color: var(--gray-color);
             margin-top: 5px;
         }
+
     }
+
+
 }
 
 .app__skills-exp-year {
