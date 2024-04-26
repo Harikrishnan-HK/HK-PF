@@ -19,8 +19,20 @@ const Projects = () => {
 
     client.fetch(query)
       .then((data)=> {
-        setWorks(data);
-        setFilterWorks(data);
+        const sortedWorks = data.sort((a, b) => {
+          const tagA = a.tags[0];
+          const tagB = b.tags[0];
+          if (tagA < tagB) {
+            return -1;
+          }
+          if (tagA > tagB) {
+            return 1;
+          }
+          return 0;
+        });
+
+        setWorks(sortedWorks);
+        setFilterWorks(sortedWorks);
       })
   
   }, [])
