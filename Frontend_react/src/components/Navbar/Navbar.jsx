@@ -8,10 +8,14 @@ import {images} from '../../constants'
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const navigateToHome = () => {
+    window.location.href = './';
+  };
+
   return (
     <nav className="app__navbar">
         <div className="app__navbar-logo">
-            <img src={images.logo} />
+            <img src={images.logo} onClick={navigateToHome}/>
         </div>
         <ul className="app__navbar-links">
             {['home', 'about', 'projects','skills','experiences', 'contact' ].map((item)=>(
