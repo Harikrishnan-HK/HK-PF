@@ -9,11 +9,14 @@ import './Skills.scss';
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [skills2, setSkills2] = useState([]);
+  const [certifications, setCertifications] = useState([]);
+
 
 
   useEffect(() => {
     const skillsQuery = '*[_type == "skills"]';
     const skills2Query = '*[_type == "skills2"]';
+    const certificationsQuery = '*[_type == "certifications"]';
 
 
     client.fetch(skillsQuery).then((data) => {
@@ -22,6 +25,10 @@ const Skills = () => {
     client.fetch(skills2Query).then((data) => {
       setSkills2(data);
     });
+    client.fetch(certificationsQuery).then((data) => {
+      setCertifications(data);
+    });
+
 
   }, []);
 
@@ -30,8 +37,10 @@ const Skills = () => {
       <h2 className="head-text">Skills & Certifications</h2>
 
       <div className="app__skills-container">
+      <div className="app__skills-exp">
+
+      <h3 >Web Development Skills</h3>
         <motion.div className="app__skills-list">
-        <h3 >Web Development Skills</h3>
           {skills.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -49,8 +58,13 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
-        <motion.div className="app__skills-list">
+        </div>
+        <div className="app__skills-exp">
+
         <h3>DevOps Skills</h3>
+
+        <motion.div className="app__skills-list">
+
           {skills2.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -68,6 +82,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+        </div>
 
         
         
@@ -101,7 +116,43 @@ const Skills = () => {
             </motion.div>
           ))}
         </div> */}
-      </div>
+              </div>
+
+
+        <div className="app__skills-exp">
+        <h3>Certifications</h3>
+
+          {certifications.map((certification) => (
+
+          <motion.div
+              className="app__skills-exp-item"
+              key={certification.name}
+            >
+              <div className="app__skills-exp-year">
+              <img src={urlFor(certification.icon)} alt={certification.name} />
+                </div>
+              <motion.div className="app__skills-exp-works">
+                  <>
+                    <motion.div
+                      whileInView={{ opacity: [0, 1] }}
+                      transition={{ duration: 0.5 }}
+                      className="app__skills-exp-work"
+                      data-tip
+                      data-for={certification.name}
+                      key={certification.name}
+                    >
+                      <h3 className="bold-text">{certification.name}</h3>
+                      <h4 className="bold-text" style={{color:`var(--secondary-color)`}}>{certification.company}</h4>
+                      <p className="p-text">{certification.desc1}</p>
+                    </motion.div>
+
+                  </>
+              </motion.div>
+              </motion.div>
+
+          ))}
+        </div>
+
     </>
   );
 };
