@@ -11,34 +11,36 @@ import './Footer.scss';
 
 const Footer = () => {
   const [formData, setFormData] = useState({name:'', email:'', message:''});
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+//   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+//   const [loading, setLoading] = useState(false);
 
-  const { name, email, message } = formData;
-  const handleChangeInput = (e)=> {
-    const {name, value} = e.target;
-    setFormData({...formData, [name]: value});
-  }
-const handleSubmit = () => {
-  setLoading(true);
+//   const { name, email, message } = formData;
+//   const handleChangeInput = (e)=> {
+//     const {name, value} = e.target;
+//     setFormData({...formData, [name]: value});
+//   }
+// const handleSubmit = () => {
+//   setLoading(true);
 
-  const contact = {
-    _type: 'contact',
-    name: formData.name,
-    email: formData.email,
-    message: formData.message,
-  }
+//   const contact = {
+//     _type: 'contact',
+//     name: formData.name,
+//     email: formData.email,
+//     message: formData.message,
+//   }
 
-  client.create(contact)
-    .then(()=>{
-      setLoading(false);
-      setIsFormSubmitted(true);
-    })
-}
+//   client.create(contact)
+//     .then(()=>{
+//       setLoading(false);
+//       setIsFormSubmitted(true);
+//     })
+// }
 
   return (
     <>
-    <h2 className='head-text'>Take a cofee & chat with me</h2>
+    
+    <p className='p-text'>Get In Touch</p>
+    <h2 className='head-text'>Contact Me</h2>
 
     <div className='app__footer-cards'>
       <div className='app__footer-card'>
