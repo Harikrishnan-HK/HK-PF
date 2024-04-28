@@ -20,7 +20,7 @@ const Experiences = () => {
 
   return (
     <>
-      <h2 className="head-text">Experiences</h2>
+      <h2 className="head-text">My Work Experience</h2>
 
       <div className="app__skills-container">
 
@@ -99,4 +99,4 @@ const Experiences = () => {
 
 
 export default AppWrap(
-  MotionWrap(Experiences, 'app__skills'), 'experiences', "app__whitebg");
+  MotionWrap(Experiences, 'app__skills'), 'experiences', "app__primarybg");
