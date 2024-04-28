@@ -16,35 +16,52 @@ import {AppWrap} from '../../wrapper';
 //   }
 // }
 const Header = () => {
-  return (
+  const navigateToAbout = () => {
+    window.location.href = './#about';
+  };
+  const downloadResume = () => {
+    window.open('/assetss/HkResume.pdf', '_blank');
+  };
+   return (
     <div className='app__headr'>
       <div className='.app__headerName'>
+        <h1>Harikrishnan Karuppiah</h1>
+        <h2>I'm a
+          <TypeAnimation
+            sequence={[
+            'Web Developer',
+            2000, 
+            'DevOps Enginner',
+            2000,
+            'Cloud Solution Architect',
+            2000,
+            'Coder',
+            2000
+            ]}
+          wrapper='span'
+          speed={50}
+          cursor={true}
+          style={{ fontSize: '1em', color: '#40128B', paddingLeft:'5px'  }}
+          repeat={Infinity} /> 
+        </h2>
+      </div>
 
-          <h1>Harikrishnan Karuppiah</h1>
-    <h2>I'm a
-    <TypeAnimation
-      sequence={[
-        // Same substring at the start will only be typed out once, initially
-        'Web Developer',
-        2000, // wait 1s before replacing "Mice" with "Hamsters"
-        'Cloud Solution Architect',
-        2000,
-        'Coder',
-        2000,
-        'Freelancer',
-        2000
-      ]}
-      wrapper='span'
-      speed={50}
-      cursor={true}
-      style={{ fontSize: '1em', color: '#40128B', paddingLeft:'5px'  }}
-      repeat={Infinity}
-    /> </h2>
-          </div>
+      <div class="btn-container">
+          <button class="btn btn-color-1" onClick={navigateToAbout}>
+            Explore My Story
+          </button>
+          <button
+            class="btn btn-color-2"
+            onClick={downloadResume}
+          >
+            Download Resume
+          </button>
 
-
+      </div>
+    
 
     </div>
+
 
     // <div className='app__headr' >
     //   <motion.div
