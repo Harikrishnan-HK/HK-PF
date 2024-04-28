@@ -8,13 +8,21 @@ import './Skills.scss';
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
+  const [skills2, setSkills2] = useState([]);
+
 
   useEffect(() => {
     const skillsQuery = '*[_type == "skills"]';
+    const skills2Query = '*[_type == "skills2"]';
+
 
     client.fetch(skillsQuery).then((data) => {
       setSkills(data);
     });
+    client.fetch(skills2Query).then((data) => {
+      setSkills2(data);
+    });
+
   }, []);
 
   return (
@@ -23,6 +31,7 @@ const Skills = () => {
 
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
+        <h3 >Web Development Skills</h3>
           {skills.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -40,6 +49,28 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+        <motion.div className="app__skills-list">
+        <h3>DevOps Skills</h3>
+          {skills2.map((skill) => (
+            <motion.div
+              whileInView={{ opacity: [0, 1] }}
+              transition={{ duration: 0.5 }}
+              className="app__skills-item app__flex"
+              key={skill.name}
+            >
+              <div
+                className="app__flex"
+                style={{ backgroundColor: skill.bgColor }}
+              >
+                <img src={urlFor(skill.icon)} alt={skill.name} />
+              </div>
+              <p className="p-text">{skill.name}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        
+        
         {/* <div className="app__skills-exp">
           {skills.map((skill) => (
             <motion.div
