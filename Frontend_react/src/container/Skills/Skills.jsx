@@ -39,7 +39,7 @@ const Skills = () => {
       <div className="app__skills-container">
       <div className="app__skills-exp">
 
-      <h3 >Web Development Skills</h3>
+      <h3 className='medium-text'>Web Development Skills</h3>
         <motion.div className="app__skills-list">
           {skills.map((skill) => (
             <motion.div
@@ -61,7 +61,7 @@ const Skills = () => {
         </div>
         <div className="app__skills-exp">
 
-        <h3>DevOps Skills</h3>
+        <h3 className='medium-text'>DevOps Skills</h3>
 
         <motion.div className="app__skills-list">
 
@@ -117,10 +117,10 @@ const Skills = () => {
           ))}
         </div> */}
               </div>
+              <div style={{ marginBottom: '2em' }}></div>
 
-
-        <div className="app__skills-exp">
-        <h3>Certifications</h3>
+        <div className="app__skills-exp" >
+        <h3 className='medium-text'>Certifications</h3>
 
           {certifications.map((certification) => (
 
