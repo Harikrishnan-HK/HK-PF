@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { BsBehance, BsGithub, BsLinkedin } from 'react-icons/bs' ;
+
 
 import {images} from '../../constants';
-import { AppWrap,MotionWrap } from '../../wrapper';
+import { AppWrap,AppWrapFooter,MotionWrap } from '../../wrapper';
 import { client } from '../../client';
 import './Footer.scss';
 
@@ -48,8 +50,26 @@ const handleSubmit = () => {
         <a href="tel: +1 (548) 333-7639" className='p-text'>+1 (548) 333-7639</a>
       </div>
     </div>
+    <div className='app__socials'>
+        <div>
+            <a href="https://www.linkedin.com/in/harikrishnan-karuppiah/" target="_blank" rel="noopener noreferrer">
+                <BsLinkedin />
+            </a>
+        </div>
+        <div>
+          <a href="https://github.com/Harikrishnan-HK" target="_blank" rel="noopener noreferrer">
+            <BsGithub />
+          </a>
+        </div>
+        <div>
+        <a href="https://www.behance.net/harikrikaruppi" target="_blank" rel="noopener noreferrer">
+                <BsBehance />
+            </a>
+        </div>
+    </div>
 
-    {!isFormSubmitted ? 
+
+    {/* {!isFormSubmitted ? 
     <div className='app__footer-form app__flex'>
       <div className='app__flex'>
         <input className='p-text' type='text' placeholder='Your Name' name= 'name' value={name} onChange={handleChangeInput} />
@@ -71,11 +91,11 @@ const handleSubmit = () => {
     : <div>
       <h3 className='head-text'>Thank you for getting in touch</h3>
     </div>
-    }
+    } */}
     </>
   )
 }
 
 
-export default AppWrap(
+export default AppWrapFooter(
   MotionWrap(Footer, 'app__footer'), 'contact', "app__whitebg");

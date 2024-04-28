@@ -1,6 +1,5 @@
 import React from 'react'
 import { BsBehance, BsGithub, BsLinkedin } from 'react-icons/bs' ;
-import {FaFacebookF} from 'react-icons/fa' ;
 
 const SocialMedia = () => {
   return (
