@@ -57,7 +57,7 @@ const Testimonial = () => {
         </div>
       </>
     )}
-    <div className='app__testimonial-brands app__flex'>
+    {/* <div className='app__testimonial-brands app__flex'>
       {brands.map((brand)=> (
         <motion.div
         whileInView={{ opacity: [0, 1] }}
@@ -70,7 +70,7 @@ const Testimonial = () => {
 
       ))}
 
-    </div>
+    </div> */}
     </>
   )
 }
