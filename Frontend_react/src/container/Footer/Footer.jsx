@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { BsBehance, BsGithub, BsLinkedin } from 'react-icons/bs' ;
 
 
 import {images} from '../../constants';
-import { AppWrap,AppWrapFooter,MotionWrap } from '../../wrapper';
-import { client } from '../../client';
+import { AppWrapFooter,MotionWrap } from '../../wrapper';
 import './Footer.scss';
 
 
 const Footer = () => {
-  const [formData, setFormData] = useState({name:'', email:'', message:''});
+  // const [formData, setFormData] = useState({name:'', email:'', message:''});
 //   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 //   const [loading, setLoading] = useState(false);
 
