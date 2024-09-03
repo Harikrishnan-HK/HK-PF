@@ -19,9 +19,9 @@ const Header = () => {
   const navigateToAbout = () => {
     window.location.href = "./#about";
   };
-  const downloadResume = () => {
-    window.open("/HariResume.pdf", "_blank");
-  };
+  // const downloadResume = () => {
+  //   window.open("/HariResume.pdf", "_blank");
+  // };
   return (
     <div className="app__headr">
       <div className=".app__headerName">
@@ -52,9 +52,12 @@ const Header = () => {
         <button class="btn btn-color-1" onClick={navigateToAbout}>
           Explore My Story
         </button>
-        <button class="btn btn-color-2" onClick={downloadResume}>
+        {/* <button class="btn btn-color-2" onClick={downloadResume}>
           Download Resume
-        </button>
+        </button> */}
+        <a href="#projects">
+          <button class="btn btn-color-2">View My Projects</button>
+        </a>
       </div>
     </div>
 
