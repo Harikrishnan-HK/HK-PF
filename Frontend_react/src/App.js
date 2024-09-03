@@ -1,8 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import {About, Footer, Header, Skills, Testimonial, Projects, Experiences,Education} from './container';
-import { Navbar } from './components';
-import './App.scss';
+import {
+  About,
+  Footer,
+  Header,
+  Skills,
+  Testimonial,
+  Projects,
+  Experiences,
+  Education,
+} from "./container";
+import { Navbar } from "./components";
+import "./App.scss";
 
 const App = () => {
   return (
@@ -14,11 +23,10 @@ const App = () => {
       <Skills />
       <Experiences />
       <Education />
-      <Testimonial />
+      {/* <Testimonial /> */}
       <Footer />
-
     </div>
   );
-}
+};
 
 export default App;
