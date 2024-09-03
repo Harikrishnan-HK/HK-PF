@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Tooltip } from 'react-tooltip';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Tooltip } from "react-tooltip";
 
-import { AppWrap,MotionWrap } from '../../wrapper';
-import { urlFor, client } from '../../client';
-import './Experiences.scss';
+import { AppWrap, MotionWrap } from "../../wrapper";
+import { urlFor, client } from "../../client";
+import "./Experiences.scss";
 
 const Experiences = () => {
   const [experiences, setExperiences] = useState([]);
@@ -15,7 +15,6 @@ const Experiences = () => {
     client.fetch(query).then((data) => {
       setExperiences(data);
     });
-
   }, []);
 
   return (
@@ -23,16 +22,12 @@ const Experiences = () => {
       <h2 className="head-text">My Work Experience</h2>
 
       <div className="app__skills-container">
-
         <div className="app__skills-exp">
           {experiences.map((experience) => (
-            <motion.div
-              className="app__skills-exp-item"
-              key={experience.year}
-            >
+            <motion.div className="app__skills-exp-item" key={experience.year}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
-                </div>
+              </div>
               <motion.div className="app__skills-exp-works">
                 {experience.works.map((work) => (
                   <>
@@ -45,10 +40,16 @@ const Experiences = () => {
                       key={work.name}
                     >
                       <h3 className="bold-text">{work.name}</h3>
-                      <h4 className="bold-text" style={{color:`var(--secondary-color)`}}>{work.company}</h4>
+                      <h4
+                        className="bold-text"
+                        style={{ color: `var(--secondary-color)` }}
+                      >
+                        {work.company}
+                      </h4>
                       <p className="p-text">{work.desc1}</p>
                       <p className="p-text">{work.desc2}</p>
                       <p className="p-text">{work.desc3}</p>
+                      <p className="p-text">{work.desc4}</p>
                     </motion.div>
 
                     {/* <Tooltip
@@ -62,12 +63,10 @@ const Experiences = () => {
                   </>
                 ))}
               </motion.div>
-                {experience.works.map((work) => (
-                  
-              <img src={urlFor(work.icon)} alt={work.name} />
-                ))}
-              </motion.div>
-
+              {experience.works.map((work) => (
+                <img src={urlFor(work.icon)} alt={work.name} />
+              ))}
+            </motion.div>
           ))}
         </div>
         {/* <div className="app__skills-container">
@@ -90,13 +89,13 @@ const Experiences = () => {
           ))}
         </motion.div>
         </div > */}
-
-
       </div>
     </>
   );
 };
 
-
 export default AppWrap(
-  MotionWrap(Experiences, 'app__skills'), 'experiences', "app__primarybg");
+  MotionWrap(Experiences, "app__skills"),
+  "experiences",
+  "app__primarybg"
+);
