@@ -19,7 +19,7 @@ To get a local copy up and running, follow these steps:
 ### Installation
 1. **Clone the repo**:
     ```bash
-    git clone https://github.com/your-username/your-repo-name.git
+    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/Harikrishnan-HK/HK-PF.git)
     ```
 
 2. **Install NPM packages**:
@@ -32,5 +32,27 @@ To start the frontend development server:
 
 ```bash
 npm start
+```
+This will run the app in development mode. Open http://localhost:3000 to view it in the browser.
 
+### Running the Backend (Sanity Studio)
+To start the Sanity backend for content management:
+
+```bash
+npm run dev
+```
+This command will run the Sanity Studio locally. You can manage content at http://localhost:3333.
+
+## Deployment
+The website is deployed on Netlify. You can visit the live site at www.harikrishnan-k.com.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contact
+For any inquiries, feel free to reach out:
+
+- **Website**: [www.harikrishnan-k.com](https://www.harikrishnan-k.com)
+- **Email**: [krishnanhari@outlook.com](mailto:krishnanhari@outlook.com)
+- **LinkedIn**: [linkedin.com/in/harikrish-k](https://www.linkedin.com/in/harikrish-k)
 
