@@ -13,20 +13,10 @@ const Projects = () => {
   const [filterWorks, setFilterWorks] = useState([]);
 
   useEffect(() => {
-    const query = '*[_type =="works"]';
+    const query = '*[_type == "works"]';
 
     client.fetch(query).then((data) => {
-      const sortedWorks = data.sort((a, b) => {
-        const tagA = a.tags[0];
-        const tagB = b.tags[0];
-        if (tagA < tagB) {
-          return -1;
-        }
-        if (tagA > tagB) {
-          return 1;
-        }
-        return 0;
-      });
+      const sortedWorks = data.sort((a, b) => a.order - b.order);
 
       setWorks(sortedWorks);
       setFilterWorks(sortedWorks);
@@ -35,10 +25,10 @@ const Projects = () => {
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
-    setAnimateCard([{ y: 100, opacity: 0 }]);
+    setAnimateCard({ y: 100, opacity: 0 });
 
     setTimeout(() => {
-      setAnimateCard([{ y: 0, opacity: 1 }]);
+      setAnimateCard({ y: 0, opacity: 1 });
 
       if (item === "All") {
         setFilterWorks(works);
@@ -47,6 +37,7 @@ const Projects = () => {
       }
     }, 500);
   };
+
   return (
     <>
       <h2 className="head-text">
@@ -76,7 +67,7 @@ const Projects = () => {
         {filterWorks.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              <img src={urlFor(work.imgUrl)} alt={work.name} />
+              <img src={urlFor(work.imgUrl)} alt={work.title} />
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
@@ -124,7 +115,6 @@ const Projects = () => {
   );
 };
 
-// export default AppWrap(Projects, 'projects');
 export default AppWrap(
   MotionWrap(Projects, "app__works"),
   "projects",
